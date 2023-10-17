@@ -11,6 +11,7 @@ public class EventoDAO {
         this.em = em;
     }
 
+
     public void save(Evento evento) {
         try {
             EntityTransaction t = em.getTransaction();
@@ -25,5 +26,22 @@ public class EventoDAO {
 
     public Evento getById(long id) {
         return em.find(Evento.class, id);
+    }
+
+    public void delete(long id) {
+        try {
+            EntityTransaction t = em.getTransaction();
+            t.begin();
+            Evento found = em.find(Evento.class, id);
+            if (found != null) {
+                em.remove(found);
+                t.commit();
+                System.out.println("Elemento eliminato");
+            } else System.out.println("Elemento non trovato");
+
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 }
