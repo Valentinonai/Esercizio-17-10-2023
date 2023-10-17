@@ -19,8 +19,8 @@ public class Application {
         Random rnd = new Random();
 
 
-        for (int i = 0; i < 10; i++) {
-            evdao.save(new Evento(fkr.name().title(), LocalDate.of(rnd.nextInt(2023, 2025), rnd.nextInt(1, 13), rnd.nextInt(1, 29)), "Description", rnd.nextInt(1, 3) == 1 ? TipoEvento.PRIVATO : TipoEvento.PUBBLICO, rnd.nextInt(1, 1000)));
+        for (int i = 0; i < 20; i++) {
+            evdao.save(new Evento(fkr.name().title(), LocalDate.of(rnd.nextInt(2023, 2025), rnd.nextInt(1, 13), rnd.nextInt(1, 29)), fkr.lorem().fixedString(50), rnd.nextInt(1, 3) == 1 ? TipoEvento.PRIVATO : TipoEvento.PUBBLICO, rnd.nextInt(1, 1000)));
         }
         Evento found = evdao.getById(6);
         if (found != null)
