@@ -18,4 +18,8 @@ public class JpaUtil {
     public static EntityManagerFactory getEmf() {
         return emf;
     }
+
+    public static void close() {
+        emf.close();
+    }
 }
