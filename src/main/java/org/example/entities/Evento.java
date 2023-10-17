@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
+@Table(name = "eventi")
 public class Evento {
     @Id
     @GeneratedValue
