@@ -22,4 +22,8 @@ public class EventoDAO {
             System.out.println(e.getMessage());
         }
     }
+
+    public Evento getById(long id) {
+        return em.find(Evento.class, id);
+    }
 }
