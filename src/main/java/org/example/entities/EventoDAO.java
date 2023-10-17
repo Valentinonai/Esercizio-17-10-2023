@@ -44,4 +44,14 @@ public class EventoDAO {
             System.out.println(e.getMessage());
         }
     }
+
+    public void refresh(long id) {
+        Evento found = em.find(Evento.class, id);
+
+        found.setTitolo("Evento Prova");
+        System.out.println(found);
+        em.refresh(found);
+        System.out.println(found);
+
+    }
 }

@@ -27,5 +27,7 @@ public class Application {
 
         evdao.delete(5);
 
+        evdao.refresh(3);
+
     }
 }
